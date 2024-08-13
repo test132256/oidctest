@@ -19,6 +19,15 @@ jobs:
        - name: Checkout
          uses: actions/checkout@v3
               
+       - name: Print Specific Environment Variables
+         run: |
+           echo "OIDC_AUDIENCE is set to: ${{ env.OIDC_AUDIENCE }}"
+           echo "OIDC_PROVIDER is set to: ${{ env.OIDC_PROVIDER }}"
+           echo "JFrog URL is set to: ${{ secrets.JF_URL }}" # Caution: This will print the JFrog URL
+       
+       - name: Print All Environment Variables
+         run: printenv
+
        - name: Setup Node npm
          uses: actions/setup-node@v3
    
