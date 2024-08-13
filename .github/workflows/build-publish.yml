@@ -40,7 +40,7 @@ jobs:
            oidc-audience: ${{ env.OIDC_AUDIENCE }}
 
        - name: Set CLI Config
-         run: jf npm-config --global=true
+         run: jf npm-config 
            
        - name: Install Dependencies
          run: jf npm install
